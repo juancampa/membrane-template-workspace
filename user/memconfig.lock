@@ -1,0 +1,124 @@
+{
+  "types": {
+    "sys_user": {
+      "gref_hash": "1f440d735be3f34daaade76655a85718d0ebd73244576326a3fbbd9a85ec6f5e",
+      "type": "sys-user:Root"
+    }
+  },
+  "imports": [
+    {
+      "name": "sys-user",
+      "schema": {
+        "types": [
+          {
+            "name": "Root",
+            "description": "",
+            "actions": [
+              {
+                "name": "configureSms",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "number",
+                    "type": "String"
+                  }
+                ]
+              },
+              {
+                "name": "configureEmail",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "number",
+                    "type": "String"
+                  }
+                ]
+              }
+            ],
+            "fields": [
+              {
+                "name": "sms",
+                "description": "",
+                "type": "SmsChannel",
+                "params": []
+              },
+              {
+                "name": "email",
+                "description": "",
+                "type": "EmailChannel",
+                "params": []
+              }
+            ],
+            "events": []
+          },
+          {
+            "name": "SmsChannel",
+            "description": "",
+            "actions": [
+              {
+                "name": "tell",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "message",
+                    "type": "String"
+                  }
+                ]
+              },
+              {
+                "name": "ask",
+                "description": "",
+                "type": "String",
+                "params": [
+                  {
+                    "name": "question",
+                    "type": "String"
+                  }
+                ]
+              }
+            ],
+            "fields": [],
+            "events": []
+          },
+          {
+            "name": "EmailChannel",
+            "description": "",
+            "actions": [
+              {
+                "name": "tell",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "message",
+                    "type": "String"
+                  }
+                ]
+              },
+              {
+                "name": "ask",
+                "description": "",
+                "type": "String",
+                "params": [
+                  {
+                    "name": "question",
+                    "type": "String"
+                  }
+                ]
+              }
+            ],
+            "fields": [],
+            "events": []
+          }
+        ],
+        "imports": []
+      },
+      "source": {
+        "Program": "tbd"
+      }
+    }
+  ]
+}

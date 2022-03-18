@@ -1,0 +1,80 @@
+{
+  "config": {},
+  "dependencies": {
+    "sys_user": "sys-user:"
+  },
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "description": "Send text messages or email to yourself",
+        "fields": [
+          {
+            "name": "sms",
+            "description": "Send yourself text messages",
+            "type": "Sms"
+          },
+          {
+            "name": "email",
+            "description": "Send yourself emails",
+            "type": "Email"
+          }
+        ]
+      },
+      {
+        "name": "Sms",
+        "actions": [
+          {
+            "name": "configure",
+            "description": "Configure your phone number to receive text messages. This action must be invoked before trying to send messages.",
+            "params": [{ "name": "number", "type": "String" }],
+            "type": "Void"
+          },
+          {
+            "name": "handleSms",
+            "description": "Tells the user program that an sms was received. You don't normally have to use this.",
+            "params": [{ "name": "message", "type": "String" }], "type": "Void"
+          }
+        ],
+        "fields": [
+          { "name": "channel", "type": "Channel" }
+        ]
+      },
+      {
+        "name": "Email",
+        "actions": [
+          {
+            "name": "configure",
+            "description": "Configure your email address to receive emails. This action must be invoked before trying to send a any emails.",
+            "params": [{ "name": "number", "type": "String" }],
+            "type": "Void"
+          },
+          {
+            "name": "handleEmail",
+            "description": "Tells the `user` program that an email was received. You don't normally have to use this.",
+            "params": [{ "name": "message", "type": "String" }],
+            "type": "Void"
+          }
+        ],
+        "fields": [
+          { "name": "channel", "type": "Channel" }
+        ]
+      },
+      {
+        "name": "Channel",
+        "description": "A communication channel that can be used to tell or ask something from a person.\n\n If you use Channels in your programs, you can easily swap them out for other Channels as needed.",
+        "actions": [
+          { "name": "tell", "params": [{ "name": "message", "type": "String" }], "type": "Void" },
+          { "name": "ask", "params": [{ "name": "question", "type": "String" }], "type": "String" }
+        ],
+        "events": [
+          { "name": "received", "params": [], "type": "ReceivedEvent" }
+        ]
+      },
+      {
+        "name": "ReceivedEvent",
+        "fields": [{ "name": "message", "type": "String" }]
+      }
+    ]
+  }
+}

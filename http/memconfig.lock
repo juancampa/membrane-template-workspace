@@ -1,0 +1,147 @@
+{
+  "types": {
+    "sys_http": {
+      "gref_hash": "3ed2c2f0ea31bb0a44195be921dd424c2a43732f7d0289edf110619ec287c45a",
+      "type": "sys-http:Root"
+    }
+  },
+  "imports": [
+    {
+      "name": "sys-http",
+      "schema": {
+        "types": [
+          {
+            "name": "Root",
+            "description": "",
+            "actions": [
+              {
+                "name": "post",
+                "description": "",
+                "type": "Resource",
+                "params": [
+                  {
+                    "name": "url",
+                    "type": "String"
+                  },
+                  {
+                    "name": "headers",
+                    "type": "String"
+                  },
+                  {
+                    "name": "body",
+                    "type": "String"
+                  }
+                ]
+              },
+              {
+                "name": "put",
+                "description": "",
+                "type": "Resource",
+                "params": [
+                  {
+                    "name": "url",
+                    "type": "String"
+                  },
+                  {
+                    "name": "headers",
+                    "type": "String"
+                  },
+                  {
+                    "name": "body",
+                    "type": "String"
+                  }
+                ]
+              },
+              {
+                "name": "patch",
+                "description": "",
+                "type": "Resource",
+                "params": [
+                  {
+                    "name": "url",
+                    "type": "String"
+                  },
+                  {
+                    "name": "headers",
+                    "type": "String"
+                  },
+                  {
+                    "name": "body",
+                    "type": "String"
+                  }
+                ]
+              },
+              {
+                "name": "delete",
+                "description": "",
+                "type": "Resource",
+                "params": [
+                  {
+                    "name": "url",
+                    "type": "String"
+                  },
+                  {
+                    "name": "headers",
+                    "type": "String"
+                  },
+                  {
+                    "name": "body",
+                    "type": "String"
+                  }
+                ]
+              }
+            ],
+            "fields": [
+              {
+                "name": "get",
+                "description": "",
+                "type": "Resource",
+                "params": [
+                  {
+                    "name": "url",
+                    "type": "String"
+                  },
+                  {
+                    "name": "headers",
+                    "type": "String"
+                  }
+                ]
+              }
+            ],
+            "events": []
+          },
+          {
+            "name": "Resource",
+            "description": "",
+            "actions": [],
+            "fields": [
+              {
+                "name": "status",
+                "description": "",
+                "type": "Int",
+                "params": []
+              },
+              {
+                "name": "headers",
+                "description": "",
+                "type": "String",
+                "params": []
+              },
+              {
+                "name": "body",
+                "description": "",
+                "type": "String",
+                "params": []
+              }
+            ],
+            "events": []
+          }
+        ],
+        "imports": []
+      },
+      "source": {
+        "Program": "tbd"
+      }
+    }
+  ]
+}
