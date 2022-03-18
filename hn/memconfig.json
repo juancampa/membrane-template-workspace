@@ -1,0 +1,56 @@
+{
+  "dependencies": {
+    "http": "http:"
+  },
+  "config": {
+  },
+  "schema": {
+    "types": [
+      {
+
+        "name": "Root",
+        "fields": [
+          { "name": "items", "type": "ItemCollection" },
+          { "name": "users", "type": "UserCollection" }
+        ]
+      },
+      {
+        "name": "ItemCollection",
+        "fields": [{ "name": "one", "type": "Item", "params": [{ "name": "id", "type": "Int" }] }]
+      },
+      {
+        "name": "UserCollection",
+        "fields": [{ "name": "one", "type": "User", "params": [{ "name": "id", "type": "String" }] }],
+        "actions": [{ "name": "create", "type": "Void", "params": [{ "name": "id", "type": "String" }] }]
+      },
+      {
+        "name": "Item",
+        "fields": [
+          { "name": "id", "type": "Int" },
+          { "name": "deleted", "type": "Boolean" },
+          { "name": "type", "type": "String" },
+          { "name": "by", "type": "String" },
+          { "name": "time", "type": "Int" },
+          { "name": "text", "type": "String" },
+          { "name": "dead", "type": "Boolean" },
+          { "name": "parent", "type": "Item" },
+          { "name": "kids", "type": "List", "ofType": "Item" },
+          { "name": "url", "type": "String" },
+          { "name": "score", "type": "Int" },
+          { "name": "title", "type": "String" },
+          { "name": "descendants", "type": "Int" }
+        ]
+      },
+      {
+        "name": "User",
+        "fields": [
+          { "name": "id", "type": "String" },
+          { "name": "created", "type": "Int" },
+          { "name": "delay", "type": "Int" },
+          { "name": "karma", "type": "Int" },
+          { "name": "submitted", "type": "List", "ofType": "Item" }
+        ]
+      }
+    ]
+  }
+}
